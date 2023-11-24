@@ -18,13 +18,13 @@ postgres_conn = psycopg2.connect(database="postgres",
 ## Query to fetch rows from Postgres
 def executePostgresQuery(limit):
     cursor = postgres_conn.cursor()
-    cursor.execute("SELECT * FROM poccoll2 limit "+ str(limit))
+    cursor.execute("SELECT * FROM tablename limit "+ str(limit)) ## replace tablename with table name
     return cursor
 
 ## Query to fetch the count
 def fetchCount():
     cursor = postgres_conn.cursor()
-    cursor.execute("SELECT count(*) FROM poccoll2")
+    cursor.execute("SELECT count(*) FROM tablename") ## replace tablename with table name
     return cursor.fetchone()
 
 ## MongoDB Connection with database
